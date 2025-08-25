@@ -3,151 +3,432 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lakshay Menghani - Cybersecurity Portfolio</title>
+    <title>Lakshay Menghani | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* --- General Body & Font Styles --- */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        :root {
+            --bg-color: #121212;
+            --primary-color: #1a1a1a;
+            --secondary-color: #242424;
+            --accent-color: #007bff;
+            --text-color: #e0e0e0;
+            --text-secondary-color: #a0a0a0;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #121212;
-            color: #e0e0e0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.6;
         }
 
-        /* --- Container & Layout --- */
         .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 2rem;
         }
 
-        /* --- Header Styles --- */
         header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 40px 0;
+            padding: 2rem;
         }
+
         header h1 {
-            font-size: 2.5em;
-            margin: 0;
-            color: #ffffff;
-        }
-        header p {
-            font-size: 1.2em;
-            color: #00bcd4; /* Accent color */
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
         }
 
-        /* --- Section Styles --- */
+        header .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--text-secondary-color);
+            font-size: 1.8rem;
+            margin: 0 0.75rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-color);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #0056b3;
+        }
+
         section {
-            padding: 30px 0;
-            border-bottom: 1px solid #333;
-        }
-        h2 {
-            font-size: 2em;
-            color: #ffffff;
-            border-bottom: 2px solid #00bcd4;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            padding: 5rem 0;
         }
 
-        /* --- Project Card Styles --- */
-        .project-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 600;
+            position: relative;
         }
-        .project-card {
-            background-color: #1e1e1e;
-            border: 1px solid #333;
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        #about p {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-secondary-color);
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background-color: var(--secondary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--bg-color);
+            border: 4px solid var(--accent-color);
+            top: 20px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--primary-color);
+            position: relative;
             border-radius: 8px;
-            padding: 25px;
+            border: 1px solid var(--secondary-color);
+        }
+        
+        .timeline-content h3 {
+            font-size: 1.25rem;
+            color: var(--accent-color);
+        }
+        
+        .timeline-content h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-content .date {
+            font-size: 0.9rem;
+            color: var(--text-secondary-color);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        
+        .timeline-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .timeline-content ul li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-secondary-color);
+        }
+        
+        .timeline-content ul li::before {
+            content: '✓';
+            color: var(--accent-color);
+            margin-right: 10px;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--primary-color);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--secondary-color);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+        
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 188, 212, 0.15);
-        }
-        .project-card h3 {
-            margin-top: 0;
-            color: #00bcd4;
-        }
-        .project-card .skills {
-            margin-top: 15px;
-        }
-        .project-card .skill-tag {
-            display: inline-block;
-            background-color: #333;
-            color: #e0e0e0;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.9em;
-            margin-right: 8px;
-            margin-bottom: 8px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
-        /* --- Links & Footer --- */
-        a {
-            color: #00bcd4;
-            text-decoration: none;
+        .project-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
         }
-        a:hover {
-            text-decoration: underline;
+
+        .project-card p {
+            color: var(--text-secondary-color);
+            margin-bottom: 1.5rem;
         }
+        
+        .project-card .tech-stack {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            max-width: 900px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background-color: var(--primary-color);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--secondary-color);
+        }
+
+        .skill-category h3 {
+            font-size: 1.2rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            color: var(--text-secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
         footer {
             text-align: center;
-            padding: 20px 0;
-            font-size: 0.9em;
-            color: #777;
+            padding: 2rem 0;
+            background: var(--primary-color);
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary-color);
         }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            header .subtitle {
+                font-size: 1.2rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            .timeline::after {
+                left: 20px;
+            }
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 0px;
+            }
+            .timeline-item.right {
+                left: 0%;
+            }
+            .timeline-item::after {
+                left: 10px;
+            }
+        }
+
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
+    <header>
+        <div class="container">
             <h1>Lakshay Menghani</h1>
-            <p>Cybersecurity Enthusiast | Student | Ethical Hacker</p>
-        </header>
+            <p class="subtitle">Aspiring Software Developer | AI & ML Enthusiast</p>
+            <div class="social-links">
+                <a href="mailto:lakshaymenghani@gmail.com" target="" aria-label="Email"><i class="fas fa-envelope-square"></i></a>
+                <a href="https://www.linkedin.com/in/lakshaymenghani" target="https://www.linkedin.com/in/lakshay-menghani-6a285a142/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/lakshaymenghani" target="https://github.com/Lucky9113" aria-label="GitHub"><i class="fab fa-github-square"></i></a>
+            </div>
+            <a href="#about" class="cta-button">Learn More About Me</a>
+        </div>
+    </header>
 
-        <main>
-            <section id="about">
-                <h2>About Me</h2>
-                <p>
-                    I am a passionate cybersecurity student with a keen interest in network security, penetration testing,defensive strategies and database management. I enjoy exploring how systems work and identifying potential vulnerabilities to help make the digital world a safer place.
-                </p>
-            </section>
+    <main>
+        <section id="about" class="container">
+            <h2>About Me</h2>
+            <p>
+                I am a motivated and self-starting Computer Science student with a strong foundation in software development and project management. Currently studying at VIT Vellore, I am passionate about leveraging technology to solve real-world problems. I thrive in fast-paced, collaborative team environments and am always eager to take on new challenges and contribute to high-impact projects.
+            </p>
+        </section>
 
-            <section id="projects">
-                <h2>Projects & Demonstrations</h2>
-                <div class="project-grid">
-                    <div class="project-card">
-                        <h3>Subdomain Enumeration Seminar</h3>
-                        <p>
-                            A practical demonstration of reconnaissance techniques used to map an organization's digital footprint. This project involved setting up a live, controlled environment to showcase how attackers use dictionary and brute-force attacks to discover hidden subdomains, and why this is a critical first step in a penetration test.
-                        </p>
-                        <div class="skills">
-                            <span class="skill-tag">DNS Reconnaissance</span>
-                            <span class="skill-tag">Dictionary Attacks</span>
-                            <span class="skill-tag">Gobuster</span>
-                            <span class="skill-tag">ffuf</span>
-                            <span class="skill-tag">Ethical Hacking</span>
-                        </div>
+        <section id="experience" class="container">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Redington</h3>
+                        <h4>AI and ML Intern</h4>
+                        <div class="date">May 2025 – July 2025</div>
+                        <ul>
+                            <li>Collaborated in a team to develop a contract summarizer using Python & OpenVINO.</li>
+                            <li>Implemented AI model deployment and optimization for enhanced performance.</li>
+                            <li>Worked extensively with Hugging Face models for document processing.</li>
+                        </ul>
                     </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Nagarro Mena LLC</h3>
+                        <h4>Data Warehousing Intern</h4>
+                        <div class="date">May 2024 – June 2024</div>
+                        <ul>
+                            <li>Developed a sample data warehouse using SQL Server 2019.</li>
+                            <li>Executed ETL processes in a fast-moving environment using Microsoft Azure.</li>
+                            <li>Gained proficiency in cloud hosting and core data warehousing concepts.</li>
+                        </ul>
                     </div>
-            </section>
+                </div>
+            </div>
+        </section>
 
-            <section id="contact">
-                <h2>Contact</h2>
-                <p>
-                    You can find me on <a href="https://www.linkedin.com/in/lakshay-menghani-6a285a142/" target="_blank">LinkedIn</a> or check out my work on <a href="https://github.com/Lucky9113" target="_blank">GitHub</a>.
-                </p>
-            </section>
-        </main>
+        <section id="projects" class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>PDF Summarizer [AI]</h3>
+                    <p>Built an AI-powered document summarizer using an OpenVINO LLAMA model with a Streamlit frontend. It supports multiple models and CPU/GPU inference.</p>
+                    <p class="tech-stack">Tech: Python, OpenVINO, Streamlit</p>
+                </div>
+                <div class="project-card">
+                    <h3>Receipt Extractor [AI/OCR]</h3>
+                    <p>Developed an AI system using Tesseract OCR for automated data extraction from receipts. Implemented ML models to parse and structure information for business use.</p>
+                     <p class="tech-stack">Tech: Python, Tesseract, Scikit-learn</p>
+                </div>
+                 </div>
+        </section>
 
-        <footer>
-            <p>&copy; 2025 Lakshay Menghani</p>
-        </footer>
-    </div>
+        <section id="skills" class="container">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>SQL</li>
+                        <li>Python</li>
+                        <li>Java</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>AI/ML & Frameworks</h3>
+                    <ul>
+                        <li>OpenVINO & Llama</li>
+                        <li>Hugging Face</li>
+                        <li>SQL Server, Git, Streamlit</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Professional Skills</h3>
+                    <ul>
+                        <li>Project Management</li>
+                        <li>Team Collaboration</li>
+                        <li>Leadership & Communication</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Lakshay Menghani. All Rights Reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
