@@ -216,6 +216,19 @@
             margin-right: 10px;
         }
 
+        .certificate-link {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .certificate-link:hover {
+            text-decoration: underline;
+        }
+
         /* Projects Section */
         .projects-grid {
             display: grid;
@@ -229,6 +242,8 @@
             border-radius: 8px;
             border: 1px solid var(--secondary-color);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
         
         .project-card:hover {
@@ -240,10 +255,21 @@
             font-size: 1.4rem;
             margin-bottom: 1rem;
         }
+        
+        .project-card h3 a {
+            text-decoration: none;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+
+        .project-card h3 a:hover {
+            color: var(--accent-color);
+        }
 
         .project-card p {
             color: var(--text-secondary-color);
             margin-bottom: 1.5rem;
+            flex-grow: 1;
         }
         
         .project-card .tech-stack {
@@ -330,9 +356,9 @@
             <h1>Lakshay Menghani</h1>
             <p class="subtitle">Aspiring Software Developer | AI & ML Enthusiast</p>
             <div class="social-links">
-                <a href="mailto:lakshaymenghani@gmail.com" target="" aria-label="Email"><i class="fas fa-envelope-square"></i></a>
-                <a href="https://www.linkedin.com/in/lakshaymenghani" target="https://www.linkedin.com/in/lakshay-menghani-6a285a142/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/lakshaymenghani" target="https://github.com/Lucky9113" aria-label="GitHub"><i class="fab fa-github-square"></i></a>
+                <a href="mailto:lakshaymenghani@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope-square"></i></a>
+                <a href="https://www.linkedin.com/in/lakshay-menghani-6a285a142/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Lucky9113" target="_blank" aria-label="GitHub"><i class="fab fa-github-square"></i></a>
             </div>
             <a href="#about" class="cta-button">Learn More About Me</a>
         </div>
@@ -359,6 +385,7 @@
                             <li>Implemented AI model deployment and optimization for enhanced performance.</li>
                             <li>Worked extensively with Hugging Face models for document processing.</li>
                         </ul>
+                        <a href="https://drive.google.com/file/d/1DFfDTrTi5H0TBaInaoyIYKQALqxwau1g/view?usp=sharing" target="_blank" class="certificate-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="timeline-item right">
@@ -371,6 +398,7 @@
                             <li>Executed ETL processes in a fast-moving environment using Microsoft Azure.</li>
                             <li>Gained proficiency in cloud hosting and core data warehousing concepts.</li>
                         </ul>
+                        <a href="https://drive.google.com/file/d/1wxTKCGokyC9njr5U4WN8nXWDGm5D6MHY/view?usp=sharing" target="_blank" class="certificate-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
             </div>
@@ -380,12 +408,12 @@
             <h2>Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <h3>PDF Summarizer [AI]</h3>
+                    <h3><a href="https://github.com/Lucky9113/pdf-summarizer" target="_blank">PDF Summarizer [AI] <i class="fas fa-link fa-xs"></i></a></h3>
                     <p>Built an AI-powered document summarizer using an OpenVINO LLAMA model with a Streamlit frontend. It supports multiple models and CPU/GPU inference.</p>
                     <p class="tech-stack">Tech: Python, OpenVINO, Streamlit</p>
                 </div>
                 <div class="project-card">
-                    <h3>Receipt Extractor [AI/OCR]</h3>
+                    <h3><a href="https://github.com/Lucky9113/reciept-extractor" target="_blank">Receipt Extractor [AI/OCR] <i class="fas fa-link fa-xs"></i></a></h3>
                     <p>Developed an AI system using Tesseract OCR for automated data extraction from receipts. Implemented ML models to parse and structure information for business use.</p>
                      <p class="tech-stack">Tech: Python, Tesseract, Scikit-learn</p>
                 </div>
